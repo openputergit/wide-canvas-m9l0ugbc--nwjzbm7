@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechIntern Pro - Software Development Training & Internship</title>
+    <script src="https://unpkg.com/three@0.137.5/build/three.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-white">
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="glass-effect fixed w-full z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold">TechIntern Pro</h1>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#home" class="hover:text-blue-400">Home</a>
+                    <a href="#programs" class="hover:text-blue-400">Programs</a>
+                    <a href="#benefits" class="hover:text-blue-400">Benefits</a>
+                    <a href="#contact" class="hover:text-blue-400">Contact</a>
+                </div>
+                <button class="md:hidden" id="mobile-menu-button">
+                    <i class="bi bi-list text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">Launch Your Tech Career with Real Experience</h1>
+                    <p class="text-xl mb-8">Get industry-ready with our remote internship program featuring expert training, live projects, and comprehensive career support.</p>
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full text-lg font-medium transition-colors">Apply Now</button>
+                </div>
+                <div class="glass-effect rounded-xl p-8">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80" alt="Training" class="rounded-lg w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Our Training Programs</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-effect rounded-xl p-6">
+                    <i class="bi bi-globe text-4xl text-blue-400 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Web Development</h3>
+                    <p>Master modern web technologies and frameworks with hands-on project experience.</p>
+                </div>
+                <div class="glass-effect rounded-xl p-6">
+                    <i class="bi bi-box text-4xl text-blue-400 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Blockchain Development</h3>
+                    <p>Learn blockchain fundamentals and build decentralized applications.</p>
+                </div>
+                <div class="glass-effect rounded-xl p-6">
+                    <i class="bi bi-person-workspace text-4xl text-blue-400 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Career Mentorship</h3>
+                    <p>Get professional guidance for resume building and career development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20 bg-slate-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Program Benefits</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <i class="bi bi-check-circle-fill text-green-400 text-xl mr-4"></i>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Live Online Classes</h3>
+                            <p>Interactive sessions with industry experts</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="bi bi-check-circle-fill text-green-400 text-xl mr-4"></i>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Real Project Experience</h3>
+                            <p>Work on live projects with real-world applications</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="bi bi-check-circle-fill text-green-400 text-xl mr-4"></i>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Completion Certificate</h3>
+                            <p>Receive recognized certification upon program completion</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-effect rounded-xl p-8">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80" alt="Team collaboration" class="rounded-lg w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Get Started Today</h2>
+            <div class="max-w-md mx-auto glass-effect rounded-xl p-8">
+                <form class="space-y-6">
+                    <div>
+                        <label class="block mb-2">Name</label>
+                        <input type="text" class="w-full px-4 py-2 rounded-lg bg-slate-800 border border-slate-700 focus:outline-none focus:border-blue-500" required>
+                    </div>
+                    <div>
+                        <label class="block mb-2">Email</label>
+                        <input type="email" class="w-full px-4 py-2 rounded-lg bg-slate-800 border border-slate-700 focus:outline-none focus:border-blue-500" required>
+                    </div>
+                    <div>
+                        <label class="block mb-2">Program Interest</label>
+                        <select class="w-full px-4 py-2 rounded-lg bg-slate-800 border border-slate-700 focus:outline-none focus:border-blue-500">
+                            <option>Web Development</option>
+                            <option>Blockchain Development</option>
+                            <option>Career Mentorship</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Three.js Background Animation
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: document.querySelector('#bg-canvas'), alpha: true });
+        
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        camera.position.setZ(30);
+
+        // Create particles
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particlesCount = 2000;
+        const posArray = new Float32Array(particlesCount * 3);
+
+        for(let i = 0; i < particlesCount * 3; i++) {
+            posArray[i] = (Math.random() - 0.5) * 100;
+        }
+
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+        const particlesMaterial = new THREE.PointsMaterial({ 
+            size: 0.005,
+            color: 0x4a90e2
+        });
+
+        const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+        scene.add(particlesMesh);
+
+        // Animation
+        function animate() {
+            requestAnimationFrame(animate);
+            particlesMesh.rotation.y += 0.0003;
+            renderer.render(scene, camera);
+        }
+
+        animate();
+
+        // Responsive canvas
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // Mobile menu
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        mobileMenuButton.addEventListener('click', () => {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('h-screen');
+            const links = document.querySelector('.md\\:flex');
+            links.classList.toggle('hidden');
+            links.classList.toggle('flex');
+            links.classList.toggle('flex-col');
+            links.classList.toggle('items-center');
+            links.classList.toggle('mt-4');
+        });
+    </script>
+<script>document.body.addEventListener('wheel', e => { if (!e.ctrlKey) return; e.preventDefault(); return }, { passive: false })</script>
+	</body>
+</html>
